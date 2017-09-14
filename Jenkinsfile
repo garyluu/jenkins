@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('get') {
       steps {
-        sh '''dockstore tool launch --entry quay.io/ga4gh-dream/dockstore-tool-synapse-get --json /home/ubuntu/synapse/hello_world_get.cwl.json
+        sh '''dockstore tool launch --config /home/ubuntu/synapse/config --entry quay.io/ga4gh-dream/dockstore-tool-synapse-get --json /home/ubuntu/synapse/hello_world_get.cwl.json
 '''
       }
     }

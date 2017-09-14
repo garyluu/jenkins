@@ -16,5 +16,10 @@ pipeline {
         sh 'dockstore tool launch --local-entry md5sum_checker.cwl --json md5sum_checker.cwl.json'
       }
     }
+    stage('grep') {
+      steps {
+        sh 'cat results.json | grep Overall'
+      }
+    }
   }
 }

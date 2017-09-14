@@ -13,6 +13,8 @@ pipeline {
     }
     stage('check') {
       steps {
+        sh '''
+mv *T*H*M*S 7-26-2017T2H43M10S'''
         sh 'dockstore tool launch --local-entry validator.cwl --json validator.json'
       }
     }

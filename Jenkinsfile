@@ -4,6 +4,7 @@ pipeline {
     stage('get') {
       steps {
         deleteDir()
+        sh 'pip list'
         sh 'dockstore tool launch --config /home/ubuntu/synapse/config --entry quay.io/ga4gh-dream/dockstore-tool-synapse-get --json /home/ubuntu/synapse/encode_mapping_workflow_get.cwl.json'
       }
     }

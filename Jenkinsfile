@@ -3,6 +3,8 @@ pipeline {
   stages {
     stage('get') {
       steps {
+        deleteDir()
+        sh 'pip list'
         sh 'dockstore tool launch --config /home/ubuntu/synapse/config --entry quay.io/ga4gh-dream/dockstore-tool-synapse-get --json /home/ubuntu/synapse/bcbio_NA12878-chr20_get.cwl.json'
       }
     }

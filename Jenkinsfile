@@ -16,5 +16,10 @@ pipeline {
         sh 'dockstore tool launch --local-entry hello_world_checker.cwl --json hello_world_checker.cwl.json'
       }
     }
+    stage('grep') {
+      steps {
+        sh 'cat results.json | grep overall'
+      }
+    }
   }
 }

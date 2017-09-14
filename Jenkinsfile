@@ -16,5 +16,10 @@ pipeline {
         sh 'dockstore tool launch --local-entry bcbio_NA12878-chr20_checker.cwl --json bcbio_NA12878-chr20_checker.json'
       }
     }
+    stage('grep') {
+      steps {
+        sh 'cat results.json | grep overall'
+      }
+    }
   }
 }

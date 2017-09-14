@@ -16,5 +16,10 @@ pipeline {
         sh 'dockstore tool launch --local-entry biowardrobe_chipseq_se_checker.cwl --json biowardrobe_chipseq_se_checker.json'
       }
     }
+    stage('grep') {
+      steps {
+        sh 'cat results.json | grep overall'
+      }
+    }
   }
 }

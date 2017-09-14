@@ -17,5 +17,10 @@ pipeline {
         sh 'dockstore tool launch --local-entry gdc_dnaseq_transform_checker.cwl --json gdc_dnaseq_transform_checker.cwl.json'
       }
     }
+    stage('grep') {
+      steps {
+        sh 'cat results.json | grep overall'
+      }
+    }
   }
 }

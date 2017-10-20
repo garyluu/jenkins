@@ -3,6 +3,9 @@ pipeline {
   stages {
     stage('get') {
       steps {
+        deleteDir()
+        sh 'pip list'
+        sh 'dockstore -v'
         sh 'dockstore tool launch --config /home/ubuntu/synapse/config --entry quay.io/ga4gh-dream/dockstore-tool-synapse-get --json /home/ubuntu/synapse/knoweng_gene_prioritization_get.cwl.json'
       }
     }
